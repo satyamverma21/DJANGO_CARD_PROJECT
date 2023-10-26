@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+{% block start %}
+
+{% comment %} <h3>BACKEND DATA: {{peoples}}</h3> {% endcomment %}
+<table class="container mt-3">
+    <tr>
+        <th>NAME</th>
+        <th>DESCRIPTION</th>
+        <th>AGE</th>
+        <th>Overall</th>
+    </tr>
+    {% for people in peoples %}
+    <tr>
+        <td>{{people.name}}</td>
+        <td>{{people.desc}}</td>
+        <td>{{people.age}}</td>
+        <td>{% if people.age < 20 %}up{% else %}down{% endif %}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+<hr>
+
+
+{% endblock %}
