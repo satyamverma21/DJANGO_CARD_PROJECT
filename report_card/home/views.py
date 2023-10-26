@@ -44,7 +44,6 @@ def login_page(request):
     if request.method == "POST":
         username = request.POST.get('username')
         password = request.POST.get('password')
-        print(f"{password=}")
         if not User.objects.filter(username=username).exists():
             messages.info(request, "User not exists")
             return redirect('/login')

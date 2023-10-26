@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import *
+from card.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -26,7 +27,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("login/", login_page, name="login_page"),
     path("logout/", logout_page, name="logout_page"),
-    path("register/", register_page, name="register_page")
+    path("register/", register_page, name="register_page"),
+    path("student/", student_page, name="student_page"),
+    path("report/<student_id>", report_page, name="report_page")
 ]
 
 if settings.DEBUG:
